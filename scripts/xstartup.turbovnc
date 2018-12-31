@@ -1,0 +1,25 @@
+#!/bin/sh
+
+export XKL_XMODMAP_DISABLE=1
+# Uncomment the following two lines for normal desktop:
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+# xrdb $HOME/.Xresources, tells VNC's GUI framework to read the server user's .Xresources file. 
+# .Xresources is where a user can make changes to certain settings of the graphical desktop, like terminal colors, cursor themes, and font rendering.
+# The second command tells the server to launch Xfce, which is where you will find all of the graphical software that you need to comfortably manage your server.
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+
+/usr/bin/lxsession -s Lubuntu -e LXDE &
+# gnome-panel &
+# gnome-settings-daemon &
+# metacity &
+# nautilus &
+# gnome-terminal &
+
+# TVNC_SSHAGENT=/usr/bin/ssh-agent
+# TVNC_VGLRUN="vglrun +wm"
+# exec $TVNC_SSHAGENT $TVNC_VGLRUN /etc/X11/Xsession
