@@ -3,6 +3,8 @@ Configure AWS instance for Udacity Self-Driving Car Engineer Nanodegree step by 
 
 ## Overview
 ___
+This repository is original from [ec2-setup](https://github.com/yrahal/ec2-setup).  
+
 List of 4 scripts to prepare a stock Ubuntu AMI on AWS to act as a remote workstation, including 3D acceleration (when used with a GPU instance).  
 The scripts (located under `scripts/`) take care of installing Lubuntu, TurboVNC, VirtualGL, Nvidia drivers, Docker and nvidia-docker plugin to expose the graphics hardware to Docker containers and enable the execution of 3D accelerated apps inside them.  
 This tutorial is prepared for the final project in term 3 of Udacity Self-Driving Engineering Nanodegree. In this tutorial,
@@ -84,6 +86,7 @@ And visit http://webglreport.com/ to check that you're effectively using the Nvi
 You could save more money by using spot instance and attaching an external volume where you can save your work.
 ## References
 ---  
+* [ec2-setup](https://github.com/yrahal/ec2-setup): Original repository.  
 * [Remote server setup for VNC](https://github.com/UV-CDAT/uvcdat/wiki/Remote-server-setup-for-VNC): 
 TurboVNC and VirtualGL installation.  
 * [Linux Accelerated Computing Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/accelerated-computing-instances.html#install-nvidia-driver): 
